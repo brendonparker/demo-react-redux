@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppUsingReact } from "./nonredux/AppUsingReact";
+import { AppUsingRedux } from "./redux/AppUsingRedux";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>This demonstrates a simlpe todo list, with an editable header using vanilla react and also using react with redux.</p>
+      <p>The numbers are counters for the renders.</p>
+      <p>Note, that with redux, changes to the header input do not cause components "subscribed" to the todos array to re-render.</p>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div>
+          <h1>App Using React/Redux</h1>
+          <AppUsingRedux />
+        </div>
+
+        <div>
+          <h1>App Using React</h1>
+          <AppUsingReact />
+        </div>
+      </div>
     </div>
   );
 }
